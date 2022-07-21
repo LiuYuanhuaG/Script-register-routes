@@ -15,6 +15,6 @@ module.exports = {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'vue/multi-word-component-names': "off", // 关闭名称校验
-    '@typescript-eslint/no-var-requires': 0 // 解决node中require报错问题
+    '@typescript-eslint/no-var-requires': 0 // 解决eslint  require报错问题
   }
 }

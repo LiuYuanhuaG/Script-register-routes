@@ -20,15 +20,24 @@ npm run build
 npm run lint
 ```
 
-### 参与效用的依赖
+#### 下载依赖和启动命令
 
-```
-"ejs": "^3.1.8",
-"ts-node": "^10.9.1",
-"cross-env": "^7.0.3",
+```json
+  "devDependencies": {
+    "ts-node": "^10.4.0",
+    "ejs": "^3.1.6",
+    "cross-env": "^7.0.3"
+  }
+# 加入启动和打包命令
+ "scripts": {
+    "serve": "yarn run biz-init && vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "biz-init": "ts-node scripts/generateBizConfig.ts"
+  },
 ```
 
-### 产生主要作用的文件
+#### 写入 node 读取文件脚本
 
 - ### biz-stage-config.ts.ejs
 
@@ -93,7 +102,7 @@ fs.writeFile(targetFile, result, (err: NodeJS.ErrnoException) => {
 
 ```
 
-- #### router文件夹下 index 文件
+- #### ./src/routes/index.ts 配置路由全部导入
 
 ```js
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router"
