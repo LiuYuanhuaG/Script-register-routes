@@ -1,9 +1,12 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/about">About</router-link> |
+    <router-link to="/HelloCanvas">HelloCanvas</router-link> |
+    <router-link to="/InfiniteList" title="无限滚动">无限滚动Demo</router-link> |
+    <router-link to="/HelloThree">HelloThree</router-link>
   </nav>
-  <router-view/>
+  <router-view class="mains" />
 </template>
 
 <style lang="scss">
@@ -13,6 +16,10 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+
+  .mains {
+    height: 90vh;
+  }
 }
 
 nav {
