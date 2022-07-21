@@ -10,6 +10,8 @@ function getAllBiz(source: string): IBusinessList {
     return []
   }
   const folders: Array<string> = fs.readdirSync(source)
+  console.log(folders)
+
   const bizList: IBusinessList = []
   folders.forEach((item) => {
     const itemPath = path.resolve(__dirname, `../src/views/${item}/`)
@@ -30,7 +32,7 @@ const template: Buffer = fs.readFileSync(templatePath, "utf8")
 const bizList: IBusinessList = getAllBiz(bizPath)
 
 const result = ejs.render(template, { plugins: bizList })
-// console.log(targetFile, template, bizList, result, bizPath)
+
 fs.writeFile(targetFile, result, (err: NodeJS.ErrnoException) => {
   if (err) {
     console.error("write file error", err)

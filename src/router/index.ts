@@ -5,13 +5,9 @@ const flatMap: any = (arr: any) => (Array.isArray(arr) ? arr.reduce((a, b) => [.
 
 const routes: Array<RouteRecordRaw> = [...flatMap(Routes)]
 
-console.log(routes)
-
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
 })
-console.log(router, "router")
-
 export default router
 
